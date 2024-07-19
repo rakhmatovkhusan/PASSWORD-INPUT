@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main_wrapper_div">
+        <p>Password</p>
+        <div class="wrapper">
+            <form action=" ">
+                <input type="password" class="input_password" placeholder="Enter Password" minlength="8" maxlength="16">
+                <i class="fa-solid fa-eye"></i>
+            </form>
+            <div class="content">
+                <p>Password should be</p>
+                <ul class="requirement-list"> 
+                    <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 8 character long</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 number</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 lowercase letter</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 uppercase</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 special character</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBZPg4KyDuvv2XTGzKY_dIjS99S1hYwm_o",
+          authDomain: "password-dbd07.firebaseapp.com",
+          projectId: "password-dbd07",
+          storageBucket: "password-dbd07.appspot.com",
+          messagingSenderId: "815008372580",
+          appId: "1:815008372580:web:e834a95fcaec4ff1c44c71"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        import {getDatabase, ref, set} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js"
+
+        const information = getDatabase();
+
+        let password = document.querySelector(".input_password");
+
+        function addInformation(e){
+            e.preventDefault();
+
+            set(ref(information, "users/" + password.value), {
+                password: password.value
+            })
+            .then(() => {
+                alert("Successfully done!");
+            })
+            .catch((error) => {
+                alert("Try again - Failed");
+                console.log(error);
+            })
+            password.value = "";
+        }
+      </script>
+
+    <script src="./main.js"></script>
+</body>
+</html>

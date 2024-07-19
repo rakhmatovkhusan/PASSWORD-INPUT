@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: palevioletred;
+}
+
+.main_wrapper_div{
+    width: 30%;
+    height: 420px;
+    padding: 10px 10px;
+    background-color: transparent;
+}
+
+.main_wrapper_div p{
+    text-align: center;
+    font-size: 45px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.wrapper{
+    width: 100%;
+    height: 340px;
+    background-color: transparent;
+}
+
+form{
+    width: 100%;
+    height: 55px;
+    position: relative;
+}
+
+form input{
+    width: 100%;
+    height: 55px;
+    padding: 0px 10px;
+    outline: none;
+    border: 1px solid #999;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+form i{
+    right: 18px;
+    top: 18px;
+    color: palevioletred;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+}
+
+.content{
+    margin: 10px 0 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: rgb(230, 123, 159);
+}
+
+.content p{
+    font-size: 34px;
+    text-align: start;
+    margin-left: 20px;
+}
+
+.content .requirement-list{
+    margin-top: 20px;
+}
+
+.requirement-list li{
+    list-style: none;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.requirement-list li.valid i{
+    font-size: 1.2rem;
+    color: palevioletred;
+}
+
+.requirement-list li i{
+    font-size: 0.7rem;
+    color: #aaa;
+    margin-left: 20px;
+    width: 20px;
+}
+
+.requirement-list li span{
+    margin-left: 10px;
+    color: #000;
+}
+
+.requirement-list li.valid span{
+    color: #fff;
+}
