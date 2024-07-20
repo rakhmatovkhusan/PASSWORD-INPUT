@@ -11,7 +11,7 @@
     <div class="main_wrapper_div">
         <p>Password</p>
         <div class="wrapper">
-            <form action=" ">
+            <form id="form" action="#">
                 <input type="password" class="input_password" placeholder="Enter Password" minlength="8" maxlength="16">
                 <i class="fa-solid fa-eye"></i>
             </form>
@@ -71,6 +71,8 @@
 
         let password = document.querySelector(".input_password");
 
+        let form = document.querySelector("#form");
+
         function addInformation(e){
             e.preventDefault();
 
@@ -85,7 +87,11 @@
                 console.log(error);
             })
             password.value = "";
+
+            let form = document.querySelector("#form");
         }
+
+        form.addEventListener("submit", addInformation)
       </script>
 
     <script src="./main.js"></script>
